@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Terminal, Github, Linkedin } from "lucide-react";
+import { Menu, X, Terminal, Github, Linkedin, FileText, ExternalLink } from "lucide-react";
 import { portfolio } from "../data/portfolio";
 
 export const Navbar: React.FC = () => {
@@ -119,10 +119,33 @@ export const Navbar: React.FC = () => {
               <span>X</span>
             </a>
           )}
+
+          {/* View Resume Action */}
+          <a
+            href={`${import.meta.env.BASE_URL}resume.html`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-bold text-white bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 rounded-md transition-all shadow-[0_0_12px_rgba(249,115,22,0.35)] hover:shadow-[0_0_16px_rgba(249,115,22,0.6)] focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none ml-1"
+            aria-label="View Resume (opens in separate page)"
+          >
+            <FileText className="w-3.5 h-3.5" />
+            <span>Resume</span>
+            <ExternalLink className="w-3 h-3 opacity-80" />
+          </a>
         </nav>
 
         {/* Mobile Menu Button */}
         <div className="flex items-center md:hidden gap-1.5">
+          <a
+            href={`${import.meta.env.BASE_URL}resume.html`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-2.5 py-1.5 text-xs font-mono font-bold text-white bg-gradient-to-r from-orange-600 to-amber-600 rounded-md flex items-center gap-1 shadow-[0_0_10px_rgba(249,115,22,0.3)]"
+            aria-label="View Resume"
+          >
+            <FileText className="w-3.5 h-3.5" />
+            <span>Resume</span>
+          </a>
           <a
             href={portfolio.socialLinks.github}
             target="_blank"
@@ -191,6 +214,17 @@ export const Navbar: React.FC = () => {
               </a>
             ))}
             <div className="pt-3 border-t border-white/10 space-y-2">
+              <a
+                href={`${import.meta.env.BASE_URL}resume.html`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-mono font-bold text-white bg-gradient-to-r from-orange-600 to-amber-600 rounded-md shadow-[0_0_15px_rgba(249,115,22,0.4)] transition-all"
+              >
+                <FileText className="w-4 h-4" />
+                <span>VIEW RESUME (PDF)</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+              </a>
+
               <a
                 href={portfolio.socialLinks.github}
                 target="_blank"

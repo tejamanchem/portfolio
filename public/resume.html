@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teja Sai Manikanta Manchem - Resume | SDE 2 Backend & Distributed Systems</title>
+  <meta name="description" content="Resume of Teja Sai Manikanta Manchem - SDE 2 with ~5 years experience in Backend Systems, Distributed Architectures, Apache Kafka, PostgreSQL, and AI Event Correlation." />
+  <meta name="author" content="Teja Sai Manikanta Manchem" />
+  
+  <!-- Inter & JetBrains Mono Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --accent: #f97316;
+      --text-main: #0f172a;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --pill-bg: #f1f5f9;
+      --pill-text: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text-body);
+      background-color: var(--bg-page);
+      line-height: 1.55;
+      font-size: 13px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Action Bar */
+    .action-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #f8fafc;
+    }
+
+    .action-bar-info {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: #f97316;
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background: #ea580c;
+    }
+
+    .btn-secondary {
+      background: #1e293b;
+      color: #cbd5e1;
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+    .btn-secondary:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    /* Resume Container */
+    .resume-container {
+      max-width: 860px;
+      margin: 28px auto 60px;
+      padding: 0 16px;
+    }
+
+    .resume-sheet {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 44px 48px;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Header Section */
+    .header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4px;
+    }
+
+    .name {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 12px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .contact-item a {
+      color: var(--text-body);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--text-muted);
+      transition: color 0.15s;
+    }
+
+    .contact-item a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* Section Styling */
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 12.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-main);
+      font-family: 'JetBrains Mono', monospace;
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 4px;
+      height: 13px;
+      background: var(--accent);
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    /* Summary */
+    .summary-text {
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: var(--text-body);
+    }
+
+    .summary-text strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 7px;
+    }
+
+    .skill-line {
+      display: grid;
+      grid-template-columns: 175px 1fr;
+      font-size: 12px;
+      align-items: baseline;
+    }
+
+    .skill-cat {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 11.5px;
+    }
+
+    .skill-items {
+      color: var(--text-body);
+    }
+
+    /* Experience Items */
+    .exp-item {
+      margin-bottom: 16px;
+    }
+
+    .exp-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .exp-role {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .exp-company {
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .exp-dates {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .exp-sub {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    /* Bullets */
+    .bullets {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .bullets li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 12px;
+      line-height: 1.55;
+      color: var(--text-body);
+      margin-bottom: 4px;
+    }
+
+    .bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      top: -1px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .bullets li strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* Projects Compact Showcase */
+    .projects-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .project-box {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+      background: #fafbfc;
+      transition: border-color 0.2s;
+    }
+
+    .project-box:hover {
+      border-color: #cbd5e1;
+    }
+
+    .project-box-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .project-name {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .project-stack {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--primary-dark);
+      background: #e0f2fe;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    .project-text {
+      font-size: 11.5px;
+      line-height: 1.5;
+      color: var(--text-body);
+    }
+
+    /* Education */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 12.5px;
+    }
+
+    .edu-degree {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .edu-school {
+      color: var(--text-muted);
+    }
+
+    /* Print Stylesheet (Clean 1-2 Page Output) */
+    @media print {
+      @page {
+        margin: 10mm 12mm;
+        size: A4 portrait;
+      }
+
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 10pt;
+      }
+
+      .action-bar {
+        display: none !important;
+      }
+
+      .resume-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .resume-sheet {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+
+      .section-title {
+        border-bottom-color: #000000 !important;
+        break-after: avoid;
+      }
+
+      .exp-item, .project-box {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .bullets li::before {
+        color: #000000 !important;
+      }
+
+      .project-stack {
+        border: 1px solid #cbd5e1;
+        background: transparent !important;
+        color: #000000 !important;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 640px) {
+      .resume-sheet {
+        padding: 24px 18px;
+      }
+      .name {
+        font-size: 22px;
+      }
+      .skill-line {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+      .exp-header {
+        flex-direction: column;
+      }
+      .projects-list {
+        grid-template-columns: 1fr;
+      }
+      .edu-row {
+        flex-direction: column;
+        gap: 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Action Bar -->
+  <header class="action-bar" aria-label="Resume Toolbar">
+    <div class="action-bar-info">
+      <span class="badge-dot"></span>
+      <span>TEJA SAI MANIKANTA MANCHEM &bull; SDE 2 RESUME</span>
+    </div>
+    <div class="btn-group">
+      <a href="./" class="btn btn-secondary" title="Back to Portfolio">
+        &larr; Portfolio
+      </a>
+      <button onclick="window.print()" class="btn btn-primary" title="Print or Save as PDF">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        Print / Save PDF
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Resume Canvas -->
+  <main class="resume-container">
+    <article class="resume-sheet" itemscope itemtype="https://schema.org/Person">
+      
+      <!-- Header -->
+      <header class="header">
+        <div class="header-top">
+          <div>
+            <h1 class="name" itemprop="name">Teja Sai Manikanta Manchem</h1>
+            <div class="title" itemprop="jobTitle">Software Development Engineer II (SDE 2) &bull; Backend &amp; Distributed Systems</div>
+          </div>
+        </div>
+        
+        <div class="contact-links">
+          <div class="contact-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; color: var(--accent);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:+919959044030" itemprop="telephone" style="font-weight: 600; color: var(--text-main);">+91 9959044030</a>
+          </div>
+          <div class="contact-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; color: var(--accent);"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            <a href="mailto:tejamanchem144@gmail.com" itemprop="email" style="font-weight: 600; color: var(--text-main);">tejamanchem144@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; color: var(--accent);"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Hyderabad, India</span>
+          </div>
+          <div class="contact-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; color: var(--accent);"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <a href="https://www.linkedin.com/in/teja-sai-018665215/" target="_blank" rel="noopener">linkedin.com/in/teja-sai-018665215</a>
+          </div>
+          <div class="contact-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; color: var(--accent);"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+            <a href="https://github.com/tejamanchem" target="_blank" rel="noopener">github.com/tejamanchem</a>
+          </div>
+          <div class="contact-item">
+            <span style="font-weight: 700; color: var(--accent);">𝕏</span>
+            <a href="https://x.com/Teja31962915" target="_blank" rel="noopener">x.com/Teja31962915</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Summary -->
+      <section class="section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="summary-text">
+          Results-oriented <strong>Software Development Engineer 2 (SDE 2)</strong> with <strong>nearly 5 years of production experience</strong> designing and scaling high-throughput distributed microservices, event-driven streaming pipelines, and real-time operational platforms. Core expertise spans <strong>Node.js, TypeScript, Apache Kafka, PostgreSQL, Redis, GraphQL, and Microsoft Azure</strong>. Track record of architecting mission-critical telecommunications systems at <strong>Dhan AI</strong>—including <strong>AI-assisted network outage classifiers (NOC PulseTriage)</strong>, geospatial telemetry platforms (Pulse), zero-touch notification engines (ZCN), and automated address qualification (AQM). Proven capability in cutting MTTI by 68%, managing 2M+ daily events with 99.98% reliability, and optimizing sub-10ms API latencies.
+        </p>
+      </section>
+
+      <!-- Technical Skills -->
+      <section class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-line">
+            <span class="skill-cat">Languages &amp; Runtimes:</span>
+            <span class="skill-items">TypeScript, Node.js, JavaScript (ES6+), SQL, Python (Event Correlation &amp; Analytics), HTML5/CSS3</span>
+          </div>
+          <div class="skill-line">
+            <span class="skill-cat">Backend &amp; Microservices:</span>
+            <span class="skill-items">Distributed Architecture, RESTful Services, GraphQL (Apollo Server, PostGraphile), WebSockets, Node-RED, Idempotency</span>
+          </div>
+          <div class="skill-line">
+            <span class="skill-cat">Streaming &amp; Messaging:</span>
+            <span class="skill-items">Apache Kafka (Topic Partitioning, Consumer Groups, DLQ), Event-Driven Architecture, Worker Queues</span>
+          </div>
+          <div class="skill-line">
+            <span class="skill-cat">Databases &amp; Caching:</span>
+            <span class="skill-items">PostgreSQL, TypeORM (Migrations &amp; Transactions), Redis (Cache-Aside, Spatial Geohash, Pub/Sub), TimescaleDB</span>
+          </div>
+          <div class="skill-line">
+            <span class="skill-cat">Cloud &amp; Security:</span>
+            <span class="skill-items">Microsoft Azure (App Services, Key Vault PII Encryption), Docker Containers, CI/CD, GitHub Actions, Linux</span>
+          </div>
+          <div class="skill-line">
+            <span class="skill-cat">AI &amp; Observability:</span>
+            <span class="skill-items">Temporal Event Correlation Models, Telecom Triage Automation, Microsoft Power BI, PostGIS, Recharts</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Professional Experience -->
+      <section class="section">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <!-- Role 1: SDE2 -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <span class="exp-role">Software Development Engineer II (SDE 2)</span> &bull; <span class="exp-company">Dhan AI</span>
+            </div>
+            <span class="exp-dates">Oct 2023 – Present</span>
+          </div>
+          <div class="exp-sub">Hyderabad, India &bull; Core Backend Architecture &amp; Distributed Systems</div>
+          <ul class="bullets">
+            <li>
+              <strong>NOC PulseTriage (AI Correlation Engine):</strong> Architected an automated diagnostics platform utilizing <strong>temporal event correlation models</strong> over Kafka streams to classify network outage causes (power failure vs. ONT fault vs. fiber cut), achieving <strong>96% classification accuracy</strong> and cutting <strong>Mean Time to Identify (MTTI) by 68%</strong>.
+            </li>
+            <li>
+              <strong>Network Topology Graph Engine:</strong> Engineered a hierarchical network visualizer mapping subscriber ONTs through fiber splitters to central OLT chassis with canvas level-of-detail virtualization, enabling operators to pinpoint localized fault clusters in real-time.
+            </li>
+            <li>
+              <strong>Pulse Observability &amp; GIS Platform:</strong> Built an operational telemetry service aggregating throughput, order velocity, and live <strong>GIS geospatial heatmaps correlated with customer support call clusters</strong>, detecting regional fiber degradations within 3 minutes.
+            </li>
+            <li>
+              <strong>High-Performance GraphQL Layer:</strong> Designed high-throughput GraphQL schema interfaces using <strong>Apollo Server</strong> and <strong>PostGraphile</strong> over PostgreSQL, leveraging connection pooling to maintain sub-10ms P99 query latency under peak operational traffic.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Role 2: Software Engineer -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <span class="exp-role">Software Engineer</span> &bull; <span class="exp-company">Dhan AI</span>
+            </div>
+            <span class="exp-dates">Jan 2022 – Sep 2023</span>
+          </div>
+          <div class="exp-sub">Hyderabad, India &bull; Backend Systems &amp; API Integration</div>
+          <ul class="bullets">
+            <li>
+              <strong>ZCN (Zero-Config Notification Platform):</strong> Developed a high-volume notification engine dispatching automated outage alerts across SMS, Email, and Push. Integrated an embedded <strong>headless Node-RED flow engine</strong> for zero-downtime routing rule updates, processing <strong>2M+ messages with 99.98% delivery reliability</strong> and reducing incoming support calls by <strong>42%</strong>.
+            </li>
+            <li>
+              <strong>Kafka Stream Ingestion &amp; Throttling:</strong> Designed partitioned Kafka consumer pipelines paired with Redis token-bucket rate limiters and idempotency deduplication, reliably absorbing 50,000+ subscriber disconnect events during regional fiber cuts.
+            </li>
+            <li>
+              <strong>AQM (Address Quality Management):</strong> Integrated Smarty Address API with USPS CASS normalization; engineered a 2-tier geohash Redis cache delivering <strong>sub-10ms response times</strong>, cutting external API costs by <strong>65%</strong> and eliminating wrong-door technician dispatches.
+            </li>
+            <li>
+              <strong>GovSubsidy Automated Enrollment:</strong> Built a compliant broadband subsidy enrollment pipeline integrating with government registry APIs (ACP/Lifeline), securing applicant PII with <strong>Azure Key Vault envelope encryption</strong> and reducing verification turnaround from <strong>14 days to under 45 seconds</strong>.
+            </li>
+            <li>
+              <strong>Database Optimization:</strong> Authored zero-downtime TypeORM migrations, profiled query execution plans in pgAdmin, and indexed relational datasets to ensure 99.99% database availability across microservice boundaries.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Role 3: Junior Engineer / Intern -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <span class="exp-role">Junior Software Engineer (Intern)</span> &bull; <span class="exp-company">Dhan AI</span>
+            </div>
+            <span class="exp-dates">Feb 2021 – Dec 2021</span>
+          </div>
+          <div class="exp-sub">Hyderabad, India &bull; Telemetry Ingestion &amp; Analytics</div>
+          <ul class="bullets">
+            <li>
+              <strong>Telemetry Data Pipelines:</strong> Configured Apache Kafka producers and worker pools for real-time subscriber broadband speed and telemetry data ingestion.
+            </li>
+            <li>
+              <strong>Operational Intelligence Dashboards:</strong> Developed real-time analytical dashboards using <strong>Microsoft Power BI</strong> and SQL to track speed test frequency, latency distributions, and data volume trends.
+            </li>
+            <li>
+              <strong>REST API Development:</strong> Created modular, clean RESTful microservice endpoints with Node.js, Express, and PostgreSQL.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Key Architectures -->
+      <section class="section">
+        <h2 class="section-title">Key Architectural Highlights</h2>
+        <div class="projects-list">
+          
+          <div class="project-box">
+            <div class="project-box-header">
+              <span class="project-name">NOC PulseTriage</span>
+              <span class="project-stack">Kafka &bull; ML Classifier &bull; Node.js</span>
+            </div>
+            <p class="project-text">
+              Automated outage diagnostics platform analyzing temporal event sequences (dying gasp, neighbor loss-of-signal) to distinguish power outages from fiber cuts; visualizes full ONT-to-OLT hierarchy.
+            </p>
+          </div>
+
+          <div class="project-box">
+            <div class="project-box-header">
+              <span class="project-name">ZCN Notification Engine</span>
+              <span class="project-stack">Node-RED &bull; Kafka &bull; Redis</span>
+            </div>
+            <p class="project-text">
+              Multi-channel customer alert system with user preference filters, quiet hours, and dynamic visual rule routing via headless Node-RED; handles 2M+ notifications during severe outage events.
+            </p>
+          </div>
+
+          <div class="project-box">
+            <div class="project-box-header">
+              <span class="project-name">Pulse Telemetry &amp; GIS</span>
+              <span class="project-stack">TimescaleDB &bull; Redis &bull; Leaflet</span>
+            </div>
+            <p class="project-text">
+              Live operational platform correlating broadband metrics (latency, bandwidth) and customer support call density onto a spatial GIS heatmap for rapid triage of degraded network nodes.
+            </p>
+          </div>
+
+          <div class="project-box">
+            <div class="project-box-header">
+              <span class="project-name">AQM Address Engine</span>
+              <span class="project-stack">Smarty API &bull; Redis Geohash &bull; PG</span>
+            </div>
+            <p class="project-text">
+              High-speed address normalization and MDU/SFU classification adhering to USPS CASS standards; 2-tier spatial Redis caching cut external verification costs by 65%.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="section" style="margin-bottom: 0;">
+        <h2 class="section-title">Education</h2>
+        <div class="edu-row">
+          <span class="edu-degree">Bachelor of Technology (B.Tech) in Computer Science &amp; Engineering</span>
+          <span class="edu-school">JNTU Affiliated Institution &bull; India</span>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+</body>
+</html>

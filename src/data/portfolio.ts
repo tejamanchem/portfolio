@@ -3,6 +3,7 @@ export interface SocialLinks {
   linkedin: string;
   twitter: string;
   email: string;
+  phone?: string;
 }
 
 export interface EngineeringArea {
@@ -88,6 +89,7 @@ export interface PortfolioData {
     heading: string;
     subheading: string;
     email: string;
+    phone?: string;
     github: string;
     linkedin: string;
     twitter?: string;
@@ -141,7 +143,8 @@ export const portfolio: PortfolioData = {
     github: "https://github.com/tejamanchem",
     linkedin: "https://www.linkedin.com/in/teja-sai-018665215/",
     twitter: "https://x.com/Teja31962915",
-    email: "tejamanchem144@gmail.com"
+    email: "tejamanchem144@gmail.com",
+    phone: "+91 9959044030"
   },
 
   contact: {
@@ -149,6 +152,7 @@ export const portfolio: PortfolioData = {
     subheading:
       "Whether you're looking for a backend engineer for scalable microservices, distributed event pipelines, or full-stack application development, let's connect.",
     email: "tejamanchem144@gmail.com",
+    phone: "+91 9959044030",
     github: "https://github.com/tejamanchem",
     linkedin: "https://www.linkedin.com/in/teja-sai-018665215/",
     twitter: "https://x.com/Teja31962915",

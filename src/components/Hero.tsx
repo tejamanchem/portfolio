@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDown, Github, Terminal, ChevronRight, Activity } from "lucide-react";
+import { ArrowDown, Github, Terminal, ChevronRight, Activity, FileText } from "lucide-react";
 import { portfolio } from "../data/portfolio";
 
 export const Hero: React.FC = () => {
@@ -107,24 +107,35 @@ export const Hero: React.FC = () => {
           {/* CTA Action Buttons */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap items-center gap-4 pt-2"
+            className="flex flex-wrap items-center gap-3.5 pt-2"
           >
             <a
+              href={`${import.meta.env.BASE_URL}resume.html`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white font-mono text-xs font-bold tracking-wider transition-all duration-200 shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:shadow-[0_0_25px_rgba(249,115,22,0.65)] focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:outline-none"
+              aria-label="View Resume (opens in new page)"
+            >
+              <FileText className="w-4 h-4" />
+              <span>VIEW RESUME</span>
+            </a>
+
+            <a
               href="#engineering"
-              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-md bg-orange-600 hover:bg-orange-500 text-white font-mono text-xs font-semibold tracking-wider transition-all duration-200 shadow-[0_0_20px_rgba(234,88,12,0.35)] hover:shadow-[0_0_25px_rgba(234,88,12,0.55)] focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:outline-none"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-[#12151e] hover:bg-[#191d2a] text-slate-200 hover:text-white font-mono text-xs font-semibold tracking-wider border border-white/10 hover:border-orange-500/40 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
             >
               <span>VIEW ENGINEERING</span>
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-4 h-4 text-orange-400" />
             </a>
 
             <a
               href={portfolio.socialLinks.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-md bg-[#12151e] hover:bg-[#191d2a] text-slate-200 hover:text-white font-mono text-xs font-semibold tracking-wider border border-white/10 hover:border-orange-500/40 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-[#12151e] hover:bg-[#191d2a] text-slate-200 hover:text-white font-mono text-xs font-semibold tracking-wider border border-white/10 hover:border-orange-500/40 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
             >
               <Github className="w-4 h-4 text-orange-400" />
-              <span>GITHUB PROFILE</span>
+              <span>GITHUB</span>
             </a>
           </motion.div>
 

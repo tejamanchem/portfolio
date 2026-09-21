@@ -1,5 +1,5 @@
 import React from "react";
-import { Terminal, Github, Linkedin, Mail, ArrowUp, Activity } from "lucide-react";
+import { Terminal, Github, Linkedin, Mail, ArrowUp, Activity, FileText, Phone } from "lucide-react";
 import { portfolio } from "../data/portfolio";
 
 export const Footer: React.FC = () => {
@@ -83,6 +83,28 @@ export const Footer: React.FC = () => {
               <span className="hidden sm:inline">Email</span>
             </a>
           )}
+
+          {portfolio.socialLinks.phone && (
+            <a
+              href={`tel:${portfolio.socialLinks.phone.replace(/\s+/g, "")}`}
+              className="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors"
+              aria-label="Phone Direct"
+            >
+              <Phone className="w-4 h-4 text-orange-400" />
+              <span className="hidden sm:inline">Call</span>
+            </a>
+          )}
+
+          <a
+            href={`${import.meta.env.BASE_URL}resume.html`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-orange-400 hover:text-orange-300 font-semibold transition-colors"
+            aria-label="View Resume (PDF)"
+          >
+            <FileText className="w-4 h-4" />
+            <span>Resume</span>
+          </a>
 
           <div className="h-3 w-px bg-white/10" />
 

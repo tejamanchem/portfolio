@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import { SectionHeader } from "../components/SectionHeader";
 import { portfolio } from "../data/portfolio";
-import { Github, Linkedin, Mail, Copy, Check, Terminal, ExternalLink } from "lucide-react";
+import { Github, Linkedin, Mail, Copy, Check, Terminal, ExternalLink, FileText, Phone } from "lucide-react";
 
 export const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
 
   const handleCopyEmail = () => {
     if (!portfolio.contact.email) return;
     navigator.clipboard.writeText(portfolio.contact.email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleCopyPhone = () => {
+    if (!portfolio.contact.phone) return;
+    navigator.clipboard.writeText(portfolio.contact.phone);
+    setCopiedPhone(true);
+    setTimeout(() => setCopiedPhone(false), 2000);
   };
 
   return (
@@ -162,26 +170,81 @@ export const Contact: React.FC = () => {
                   </a>
                 </div>
               </div>
-            ) : (
-              <div className="p-4 rounded-lg bg-[#11141e]/50 border border-dashed border-white/10 flex items-center justify-between">
+            ) : null}
+
+            {/* Direct Phone / Call Card */}
+            {portfolio.contact.phone ? (
+              <div className="mt-3 p-4 rounded-lg bg-[#11141e] border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-md bg-[#141722] border border-white/5 flex items-center justify-center text-slate-500">
-                    <Mail className="w-5 h-5" />
+                  <div className="w-10 h-10 rounded-md bg-[#181c28] border border-white/10 flex items-center justify-center text-orange-400 shrink-0">
+                    <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-slate-300">
-                      Direct Email Inquiries
+                    <div className="text-xs font-mono text-slate-400 uppercase">
+                      Direct Phone
                     </div>
-                    <div className="text-[11px] font-mono text-slate-500">
-                      Add email address in src/data/portfolio.ts
+                    <div className="text-sm font-bold text-white font-mono">
+                      {portfolio.contact.phone}
                     </div>
                   </div>
                 </div>
-                <span className="text-[10px] font-mono text-slate-500 bg-white/5 px-2 py-0.5 rounded">
-                  SLOT READY
-                </span>
+
+                <div className="flex items-center gap-2 w-full sm:w-auto">
+                  <button
+                    onClick={handleCopyPhone}
+                    type="button"
+                    className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3.5 py-2 rounded bg-[#171b26] hover:bg-[#202534] text-xs font-mono text-slate-300 hover:text-white border border-white/10 transition-colors"
+                  >
+                    {copiedPhone ? (
+                      <>
+                        <Check className="w-3.5 h-3.5 text-emerald-400" />
+                        <span className="text-emerald-400">Copied</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-3.5 h-3.5" />
+                        <span>Copy Number</span>
+                      </>
+                    )}
+                  </button>
+
+                  <a
+                    href={`tel:${portfolio.contact.phone.replace(/\s+/g, "")}`}
+                    className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-4 py-2 rounded bg-orange-600 hover:bg-orange-500 text-xs font-mono text-white font-semibold transition-colors"
+                  >
+                    <span>Call Now</span>
+                  </a>
+                </div>
               </div>
-            )}
+            ) : null}
+
+            {/* Direct Resume Document Action */}
+            <div className="mt-4 p-4 rounded-lg bg-gradient-to-r from-[#101420] via-[#141824] to-[#121520] border border-orange-500/25 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-md bg-[#181c28] border border-orange-500/30 flex items-center justify-center text-orange-400 shrink-0">
+                  <FileText className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="text-xs font-mono text-orange-400 uppercase tracking-wider">
+                    Official Resume (ATS-Optimized &bull; Printable)
+                  </div>
+                  <div className="text-sm font-bold text-white">
+                    Teja Sai Manikanta Manchem &bull; SDE2
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href={`${import.meta.env.BASE_URL}resume.html`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white font-mono text-xs font-bold transition-all shadow-[0_0_12px_rgba(249,115,22,0.3)]"
+              >
+                <FileText className="w-3.5 h-3.5" />
+                <span>OPEN RESUME</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+              </a>
+            </div>
 
             {/* Availability Footer Note */}
             <div className="mt-8 pt-4 border-t border-white/5 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono text-slate-500">
