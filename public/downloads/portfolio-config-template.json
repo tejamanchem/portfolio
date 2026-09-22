@@ -1,0 +1,43 @@
+{
+  "name": "Your Name",
+  "title": "Software Engineer · Full-Stack & System Architect",
+  "headline": "Full-Stack Software Engineer",
+  "subheadline": "Scalable Systems & Distributed Engineering",
+  "summary": "Software Engineer with X years of experience designing and scaling production web applications, microservices, and databases.",
+  "contact": {
+    "email": "your.email@example.com",
+    "phone": "+1 234 567 8900",
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourprofile",
+    "twitter": "https://x.com/yourhandle",
+    "location": "City, Country"
+  },
+  "skills": [
+    {
+      "category": "Languages & Frameworks",
+      "items": ["TypeScript", "JavaScript", "Python", "React", "Node.js"]
+    },
+    {
+      "category": "Databases & Cloud",
+      "items": ["PostgreSQL", "Redis", "MongoDB", "Docker", "AWS / Azure"]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Company Name",
+      "role": "Senior Software Engineer",
+      "period": "2023 - Present",
+      "achievements": [
+        "Architected high-throughput services serving 500k+ daily users.",
+        "Optimized database queries, reducing P99 latency by 45%."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Project Alpha",
+      "techStack": ["React", "Node.js", "PostgreSQL"],
+      "description": "High-performance event streaming platform with real-time analytics."
+    }
+  ]
+}
