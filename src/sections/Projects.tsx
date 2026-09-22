@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { SectionHeader } from "../components/SectionHeader";
 import { ProjectCard } from "../components/ProjectCard";
-import { portfolio } from "../data/portfolio";
+import { DeepDiveModal } from "../components/DeepDiveModal";
+import { portfolio, type ProjectItem } from "../data/portfolio";
 import { Filter } from "lucide-react";
 
 type ProjectCategory = "ALL" | "OUTAGE & NOTIFICATIONS" | "TELEMETRY & ANALYTICS" | "INTEGRATION & VALIDATION";
 
 export const Projects: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>("ALL");
+  const [activeProject, setActiveProject] = useState<ProjectItem | null>(null);
 
   const filterProject = (projectId: string, category: ProjectCategory): boolean => {
     if (category === "ALL") return true;
@@ -86,9 +88,19 @@ export const Projects: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onOpenDeepDive={setActiveProject}
+            />
           ))}
         </div>
+
+        {/* Dedicated Portal-Mounted Deep Dive Modal */}
+        <DeepDiveModal
+          project={activeProject}
+          onClose={() => setActiveProject(null)}
+        />
       </div>
     </section>
   );
