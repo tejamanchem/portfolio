@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDown, Github, Terminal, ChevronRight, Activity, FileText } from "lucide-react";
+import { ArrowDown, Github, Terminal, ChevronRight, Activity, FileText, Download } from "lucide-react";
 import { portfolio } from "../data/portfolio";
 
 export const Hero: React.FC = () => {
@@ -129,6 +129,15 @@ export const Hero: React.FC = () => {
             >
               <Github className="w-3.5 h-3.5 text-orange-400" />
               <span>GITHUB</span>
+            </a>
+
+            <a
+              href="#template"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md bg-[#12151e] hover:bg-[#191d2a] text-slate-200 hover:text-white font-mono text-xs font-semibold tracking-wider border border-orange-500/30 hover:border-orange-500/60 transition-all duration-200 shadow-[0_0_10px_rgba(249,115,22,0.15)] focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
+              aria-label="View and download portfolio template"
+            >
+              <Download className="w-3.5 h-3.5 text-orange-400" />
+              <span>USE TEMPLATE</span>
             </a>
           </motion.div>
 

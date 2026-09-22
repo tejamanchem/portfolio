@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Template | ATS-Optimized Software Engineer</title>
+  <meta name="description" content="Customizable ATS-friendly resume template for software engineers." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #0284c7;
+      --accent: #f97316;
+      --text-main: #0f172a;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text-body);
+      background-color: var(--bg-page);
+      line-height: 1.55;
+      font-size: 13px;
+    }
+
+    .action-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #0f172a;
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #f8fafc;
+    }
+
+    .btn {
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+      cursor: pointer;
+      border: none;
+      background: #f97316;
+      color: #fff;
+    }
+
+    .resume-container {
+      max-width: 860px;
+      margin: 28px auto 60px;
+      padding: 0 16px;
+    }
+
+    .resume-sheet {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 44px 48px;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+    }
+
+    .name { font-size: 26px; font-weight: 800; color: var(--text-main); }
+    .title { font-size: 14px; font-weight: 700; color: var(--accent); font-family: 'JetBrains Mono', monospace; margin-bottom: 12px; }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      font-size: 12px;
+    }
+
+    .section { margin-bottom: 20px; }
+
+    .section-title {
+      font-size: 12.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-main);
+      font-family: 'JetBrains Mono', monospace;
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    .skills-grid { display: grid; gap: 7px; }
+    .skill-line { display: grid; grid-template-columns: 175px 1fr; font-size: 12px; }
+    .skill-cat { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--text-main); }
+
+    .exp-item { margin-bottom: 16px; }
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; }
+    .exp-role { font-size: 13.5px; font-weight: 700; color: var(--text-main); }
+    .exp-company { color: var(--primary); font-weight: 700; }
+    .exp-dates { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--text-muted); }
+    .exp-sub { font-size: 11.5px; color: var(--text-muted); margin-bottom: 6px; }
+
+    .bullets { list-style: none; padding-left: 0; }
+    .bullets li { position: relative; padding-left: 14px; font-size: 12px; margin-bottom: 4px; }
+    .bullets li::before { content: "•"; position: absolute; left: 2px; color: var(--accent); font-weight: bold; }
+
+    @media print {
+      @page { margin: 10mm 12mm; size: A4; }
+      body { background: #fff !important; }
+      .action-bar { display: none !important; }
+      .resume-container { max-width: 100%; margin: 0; padding: 0; }
+      .resume-sheet { border: none !important; box-shadow: none !important; padding: 0 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="action-bar">
+    <div style="font-family: monospace; font-size: 12px;">RESUME TEMPLATE (EDIT &amp; PRINT TO PDF)</div>
+    <button onclick="window.print()" class="btn">Print / Save as PDF</button>
+  </header>
+
+  <main class="resume-container">
+    <article class="resume-sheet">
+      
+      <!-- Instructions Box (Delete before printing if desired) -->
+      <div style="background: #fff7ed; border: 1px dashed #f97316; padding: 12px; border-radius: 6px; margin-bottom: 20px; font-size: 12px; color: #9a3412;">
+        💡 <strong>Quick Instructions:</strong> Open this file in any text editor (VS Code, Notepad), replace the bracketed placeholders with your details, save, and click "Print / Save as PDF" in your browser.
+      </div>
+
+      <!-- Header -->
+      <header class="header">
+        <h1 class="name">[Your Full Name]</h1>
+        <div class="title">[Your Role Title &bull; Backend / Full-Stack Engineer]</div>
+        
+        <div class="contact-links">
+          <span>📞 [Phone Number]</span>
+          <span>✉ [your.email@example.com]</span>
+          <span>📍 [City, Country]</span>
+          <span>💼 [linkedin.com/in/yourprofile]</span>
+          <span>🐙 [github.com/yourusername]</span>
+        </div>
+      </header>
+
+      <!-- Summary -->
+      <section class="section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p style="font-size: 12.5px; line-height: 1.6;">
+          [Write 3-4 impactful sentences highlighting your total years of experience, core technical stack (e.g. Node.js, Python, PostgreSQL, Kafka, AWS/Azure), major systems architected, and quantified performance achievements.]
+        </p>
+      </section>
+
+      <!-- Technical Skills -->
+      <section class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-line">
+            <span class="skill-cat">Languages:</span>
+            <span>TypeScript, Python, JavaScript, SQL, Go</span>
+          </div>
+          <div class="skill-line">
+            <span class="skill-cat">Backend &amp; APIs:</span>
+            <span>Node.js, Express, Microservices, RESTful APIs, GraphQL</span>
+          </div>
+          <div class="skill-line">
+            <span class="skill-cat">Databases &amp; Caching:</span>
+            <span>PostgreSQL, Redis, MongoDB, MySQL</span>
+          </div>
+          <div class="skill-line">
+            <span class="skill-cat">Cloud &amp; DevOps:</span>
+            <span>Docker, AWS/Azure, CI/CD, GitHub Actions, Linux</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="section">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <span class="exp-role">[Your Job Title]</span> &bull; <span class="exp-company">[Company Name]</span>
+            </div>
+            <span class="exp-dates">[Month Year] – Present</span>
+          </div>
+          <div class="exp-sub">[City, Country &bull; Team / Focus Area]</div>
+          <ul class="bullets">
+            <li><strong>[Key Achievement]:</strong> [Describe the action you took and the measurable impact (e.g., reduced latency by 40%, scaled system to 1M+ requests)].</li>
+            <li><strong>[Architecture]:</strong> [Describe system design, microservices, database optimizations, or caching strategies implemented].</li>
+            <li><strong>[Reliability]:</strong> [Describe how you improved uptime, eliminated bugs, or automated pipelines].</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <span class="exp-role">[Previous Job Title]</span> &bull; <span class="exp-company">[Company Name]</span>
+            </div>
+            <span class="exp-dates">[Month Year] – [Month Year]</span>
+          </div>
+          <div class="exp-sub">[City, Country]</div>
+          <ul class="bullets">
+            <li><strong>[Achievement]:</strong> [Built feature X resulting in Y% increase in engagement/throughput].</li>
+            <li><strong>[Collaboration]:</strong> [Integrated APIs and worked across cross-functional teams].</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="section">
+        <h2 class="section-title">Education</h2>
+        <div style="display: flex; justify-content: space-between; font-size: 12.5px;">
+          <div><strong>[Degree Name, e.g. B.Tech in Computer Science]</strong></div>
+          <div style="color: var(--text-muted);">[University / College Name &bull; Graduation Year]</div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+</body>
+</html>

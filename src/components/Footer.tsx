@@ -1,5 +1,5 @@
 import React from "react";
-import { Terminal, Github, Linkedin, Mail, ArrowUp, Activity, FileText, Phone } from "lucide-react";
+import { Terminal, Github, Linkedin, Mail, ArrowUp, Activity, FileText, Phone, Download } from "lucide-react";
 import { portfolio } from "../data/portfolio";
 
 export const Footer: React.FC = () => {
@@ -94,6 +94,15 @@ export const Footer: React.FC = () => {
               <span className="hidden sm:inline">Call</span>
             </a>
           )}
+
+          <a
+            href="#template"
+            className="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors"
+            aria-label="View Portfolio Template Section"
+          >
+            <Download className="w-4 h-4 text-orange-400" />
+            <span>Template</span>
+          </a>
 
           <a
             href={`${import.meta.env.BASE_URL}resume.html`}

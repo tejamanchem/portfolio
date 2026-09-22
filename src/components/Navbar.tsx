@@ -32,6 +32,7 @@ export const Navbar: React.FC = () => {
     { name: "Skills", href: "#skills" },
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
+    { name: "Template", href: "#template" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -214,6 +215,7 @@ export const Navbar: React.FC = () => {
               </a>
             ))}
             <div className="pt-3 border-t border-white/10 space-y-2">
+
               <a
                 href={`${import.meta.env.BASE_URL}resume.html`}
                 target="_blank"
